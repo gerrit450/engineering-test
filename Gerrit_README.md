@@ -4,12 +4,17 @@ This document contains all my notes for this exercise
 
 ## Changes
 
-Current UpdateQuality workflow: [Link to document](UpdateQualityRules.md) (Created using copilot)
+* Original UpdateQuality workflow: [Link to document](BeforeUpdatingQualityRules.md) (Created using copilot)
+* New UpdateQuality workflow: [Link to document](AfterUpdatingQualityRules.md) (Created using copilot)
 
 ### QualityControl.cs refactor
 This is one of the changes I refactored. I seperated the business logic of the `Program.cs` by taking the `UpdateQuality` method into its own class `QualityControl`.
 The benefits of this change is twofold. By seperating the busines logic, allows the ability to write unit tests on the `UpdateQuality` method. This allows me confidently update
 the core logic while unit testing is used to ensure I dont introduce any breaking change. This change also increases readability of the `Program.cs` file.
+
+For the internal logic of each item, I decided on using a combination of a design and factory pattern.
+
+
 
 ### Unit testing
 Added unit testing for the behaviour of certain items:
