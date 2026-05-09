@@ -7,7 +7,7 @@ namespace GildedRose.Tests
     {
 
         [Fact]
-        public void GivenAgedBrieAndQualityIsFifty_WhenCheckingQuality_ThenQualityShouldNotGoAboveFifty()
+        public void GivenQualityIsFifty_WhenCheckingQuality_ThenQualityShouldNotGoAboveFifty()
         {
             // arrange
             var item_list = new List<Item> { new Item { Name = "Aged Brie", SellIn = 1, Quality = 50 } };
@@ -22,7 +22,7 @@ namespace GildedRose.Tests
         }
 
         [Fact]
-        public void GivenAgedBrieAndPastByDate_WhenCheckingQuality_ThenQualityShouldIncreaseByTwo()
+        public void GivenPastByDate_WhenCheckingQuality_ThenQualityShouldIncreaseByTwo()
         {
             // arrange
             var item_list = new List<Item> { new Item { Name = "Aged Brie", SellIn = -1, Quality = 0 } };
@@ -37,7 +37,7 @@ namespace GildedRose.Tests
         }
 
         [Fact]
-        public void GivenAgedBrieItemAndSellinIsGreaterThanZero_WhenCheckingQuality_ThenQualityShouldIncreaseByOne()
+        public void GivenItemAndSellinIsGreaterThanZero_WhenCheckingQuality_ThenQualityShouldIncreaseByOne()
         {
             // arrange
             var item_list = new List<Item> { new Item { Name = "Aged Brie", SellIn = 2, Quality = 0 } };
