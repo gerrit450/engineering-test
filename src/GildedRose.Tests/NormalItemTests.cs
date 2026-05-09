@@ -7,7 +7,7 @@ public class NormalItemTests
 {
 
     [Fact]
-    public void GivenNormalItemAndQualityIsZero_WhenCheckingQuality_ThenQualityShouldNotGoBelowZero()
+    public void GivenQualityIsZero_WhenCheckingQuality_ThenQualityShouldNotGoBelowZero()
     {
         // arrange
         var item_list = new List<Item> { new Item { Name = "+5 Dexterity Vest", SellIn = 1, Quality = 0 } };
@@ -22,7 +22,7 @@ public class NormalItemTests
     }
 
     [Fact]
-    public void GivenNormalItemAndSellinIsPastByDate_WhenCheckingQuality_ThenQualityShouldReduceTwiceAsFast()
+    public void GivenSellinIsPastByDate_WhenCheckingQuality_ThenQualityShouldReduceTwiceAsFast()
     {
         // arrange
         var item_list = new List<Item> { new Item { Name = "+5 Dexterity Vest", SellIn = -1, Quality = 10 } };

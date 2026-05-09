@@ -6,7 +6,7 @@ namespace GildedRose.Tests
     public class Sulfuras
     {
         [Fact]
-        public void GivenItemIsSulfuras_WhenCheckingQuality_ThenQualityShouldNeverDecrease()
+        public void GivenLegendaryItem_WhenCheckingQuality_ThenQualityShouldNeverDecrease()
         {
             // arrange
             var item_list = new List<Item> { new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 1, Quality = 80 } };
@@ -21,7 +21,7 @@ namespace GildedRose.Tests
         }
 
         [Fact]
-        public void GivenItemIsSulfuras_WhenCheckingQuality_ThenSellPastDateShouldNeverDecrease()
+        public void GivenLegendaryItem_WhenCheckingQuality_ThenSellPastDateShouldNeverDecrease()
         {
             // arrange
             var item_list = new List<Item> { new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 1, Quality = 80 } };
