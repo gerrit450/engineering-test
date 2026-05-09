@@ -1,4 +1,6 @@
-﻿namespace GildedRose.Console;
+﻿using GildedRose.Console.Strategies;
+
+namespace GildedRose.Console;
 
 public class Program
 {
@@ -35,7 +37,11 @@ public class Program
 
     public void Run()
     {
-        qualityControl.UpdateQuality(Items);
+        foreach (var item in Items)
+        {
+            var itemStrategy = ItemFactory.Create(item);
+            itemStrategy.Update(item);
+        }
     }
 
 }
