@@ -4,8 +4,7 @@ namespace GildedRose.Console;
 
 public class Program
 {
-    public IList<Item> Items = new List<Item>();
-    public QualityControl qualityControl = new QualityControl();
+    private IList<Item> Items = new List<Item>();
 
     static void Main(string[] args)
     {
@@ -29,8 +28,6 @@ public class Program
                                       }
 
         };
-
-
         app.Run();
         System.Console.ReadKey();
     }
@@ -43,7 +40,6 @@ public class Program
             itemStrategy.Update(item);
         }
     }
-
 }
 
 public class Item
