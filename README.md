@@ -1,6 +1,13 @@
+
+# Gerrits changes here!
+
+[Link to document](Gerrit's_Readme.md) 
+
+
 # Valocity Engineering Recruitment Test
 
 Welcome to the Valocity Engineering recruitment test repository! This repository contains two exercises designed to assess candidates for intern and software engineering positions.
+
 
 ## Technology
 
