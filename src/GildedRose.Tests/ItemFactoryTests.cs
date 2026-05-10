@@ -12,6 +12,7 @@ namespace GildedRose.Tests
             ["Backstage passes to a TAFKAL80ETC concert", typeof(BackstageItemStrategy)],
             ["Sulfuras, Hand of Ragnaros", typeof(LegendaryItemStrategy)],
             ["Normal Item", typeof(NormalItemStrategy)],
+            ["Conjured Mana Cake", typeof(ConjuredItemStrategy)],
         ];
 
         [Theory]
