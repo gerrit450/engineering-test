@@ -1,4 +1,4 @@
-# Gerrits documentation [draft]
+# Gerrits documentation
 
 This document contains all my notes for exercise 2.
 
@@ -10,9 +10,9 @@ This document contains all my notes for exercise 2.
 * **New** UpdateQuality mermaid diagram workflow: [Link to document](AfterUpdatingQualityRules.md) (Created using copilot)
 
 For the UpdateQuality method, I decided to go with a hybrid of a strategy and factory pattern. I created an `IUpdateQualityStrategy` interface that defines the contract for updating the properties of an item.
-Every item such as the `AgedBrieStrategy` implemented this interface and specific strategyfor updating the properties of the item.
+Every item including the `AgedBrieStrategy` implement this interface and specifies the rules for updating the properties of a item.
 
-Once the strategies has been defined, I created a `ItemFactory` class that is responsible for creating the appropriate strategy based on the `item name`. The factory would create a new instance of the appropiate item.
+Once the strategies has been defined, I created a `ItemFactory` class that is responsible for instantiating the appropriate strategy based on the `item name`. The factory would create a new instance of the appropiate item.
 Any items that does not contain any special rules, follow the `NormalItemStrategy.cs` which contains the default configurations.
 
 This gives me the following advantages:
@@ -38,7 +38,7 @@ Added unit testing for the behaviour of certain items:
 	- Test that item quality increases by 1 each day
 	- Test that item quality increases by 2 when past the due date
 	- Test that item quality never goes above 50
-- Sulfuras:
+- Sulfuras/legendary:
 	- Test that item quality never changes
 	- Test that item sellin value never changes
 - Backstage pass:
