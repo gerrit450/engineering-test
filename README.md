@@ -1,8 +1,7 @@
 
 # Gerrits changes here!
 
-[Link to document](Gerrit's_Readme.md) 
-
+[Link to document](Gerrit_README.md)
 
 # Valocity Engineering Recruitment Test
 
