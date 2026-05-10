@@ -1,6 +1,6 @@
 # Gerrits documentation [draft]
 
-This document contains all my notes for this exercise
+This document contains all my notes for exercise 2.
 
 ## Changes
 
@@ -57,4 +57,4 @@ Added unit testing for the behaviour of certain items:
 1. For the item `Elixir of the Mongoose`, would this be considered a `conjured` or a `legendary type`?
   _I did not see the references to WOW! So this is a consumable item so I would make the assume that this is a `normal item` type._
 
-2.Based on this rule: `Once the sell by date has passed, Quality degrades twice as fast`. If a conjured item is past its sell by date, does it degrade by 4?
+2. Based on this rule: `Once the sell by date has passed, Quality degrades twice as fast`. If a conjured item is past its sell by date, does it degrade by 4?
