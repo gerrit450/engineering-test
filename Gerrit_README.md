@@ -4,17 +4,32 @@ This document contains all my notes for this exercise
 
 ## Changes
 
-* Original UpdateQuality workflow: [Link to document](BeforeUpdatingQualityRules.md) (Created using copilot)
-* New UpdateQuality workflow: [Link to document](AfterUpdatingQualityRules.md) (Created using copilot)
-
 ### UpdateQuality refactor
-This is one of the changes I refactored. I seperated the business logic of the `Program.cs` by taking the `UpdateQuality` method into its own class `QualityControl`.
-The benefits of this change is twofold. By seperating the busines logic, allows the ability to write unit tests on the `UpdateQuality` method. This allows me confidently update
-the core logic while unit testing is used to ensure I dont introduce any breaking change. This change also increases readability of the `Program.cs` file.
 
-For the internal logic of each item, I decided on using a combination of a design and factory pattern.
+* **Original** UpdateQuality mermaid diagram workflow: [Link to document](BeforeUpdatingQualityRules.md) (Created using copilot)
+* **New** UpdateQuality mermaid diagram workflow: [Link to document](AfterUpdatingQualityRules.md) (Created using copilot)
 
-### Unit testing
+For the UpdateQuality method, I decided to go with a hybrid of a strategy and factory pattern. I created an `IUpdateQualityStrategy` interface that defines the contract for updating the properties of an item.
+Every item such as the `AgedBrieStrategy` implemented this interface and specific strategyfor updating the properties of the item.
+
+Once the strategies has been defined, I created a `ItemFactory` class that is responsible for creating the appropriate strategy based on the `item name`. The factory would create a new instance of the appropiate item.
+Any items that does not contain any special rules, follow the `NormalItemStrategy.cs` which contains the default configurations.
+
+This gives me the following advantages:
+* Allows me to easily add new item strategies in the future without modifying existing code of other strategies, adhering to the Open/Closed principle.
+* Factory pattern will give me the correct strategy, as long as I assign the correct item.
+
+There are however, cons to this design:
+* Difficult to scale if we need 50 items with specific rules. Would need to create a new strategy for each special item.
+* Reigstration overhead: For every new strategy we want to use, we would need to add it to the `ItemFactory`.
+
+### Tests
+
+From a test perspective, this design allows me to individually test each strategy for the different strategies types, ensuring that the quality update logic is correct for each type.
+For the test strategy, I followed the triple AAA pattern (Arrange, Act, Assert) to structure my unit tests, making them clear and easy to understand.
+When I started with the `ConjuredItemStrategy`, I followed a TDD approach where I created my unit tests that contains my requirements and then I created my strategy, ensuring that
+the logic I add, does not break the requirements.
+
 Added unit testing for the behaviour of certain items:
 - Normal item:
 	- Test that item quality never goes below zero
@@ -36,7 +51,6 @@ Added unit testing for the behaviour of certain items:
 	- Test that item quality degrades by 4 when past the due date
 	- Test that item quality never goes below zero
 	- Test that item sellin value decreases by 1 each day
-
 
 ## Questions/Answers
 
