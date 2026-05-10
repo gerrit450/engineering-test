@@ -4,8 +4,8 @@
     {
         public void Update(Item item)
         {
-            item.Quality = item.SellIn < 0 && item.Quality != 0 ? item.Quality - 1 : item.Quality;
-            item.Quality = item.Quality > 0 ? item.Quality - 1 : 0;
+            var qualityDegradation = item.SellIn < 0 ? 2 : 1;
+            item.Quality = Math.Max(0, item.Quality - qualityDegradation);
             item.SellIn--;
         }
     }

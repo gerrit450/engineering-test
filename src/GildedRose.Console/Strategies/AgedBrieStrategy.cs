@@ -4,9 +4,8 @@
     {
         public void Update(Item item)
         {
-            item.Quality = item.SellIn < 0
-                ? Math.Min(50, item.Quality + 2)
-                : Math.Min(50, item.Quality + 1);
+            var qualityIncrease = item.SellIn < 0 ? 2 : 1;
+            item.Quality = Math.Min(50, item.Quality + qualityIncrease);
             item.SellIn--;
         }
     }
